@@ -23,3 +23,8 @@ Enter-PSSession -ComputerName Server2
 Start-DedupJob -Type Optimization -Volume E:
 #prüfen des Fortschrit wenn keine Antwort kommt ist sie fertig
 Get-DedupJob 
+
+#prüfen ob die Topologie fähig ist für Storage Replica 
+Test-SRTopology -SourceComputerName Server3 -SourceVolumeName f: -SourceLogVolumeName g: -DestinationComputerName Server4 -DestinationVolumeName f: -DestinationLogVolumeName g: -DurationInMinutes 0 -ResultPath c:\temp 
+#Storage Replica konfigurieren
+New-SRPartnership -SourceComputerName Server3 -SourceRGName rg03 -SourceVolumeName f: -SourceLogVolumeName g: -DestinationComputerName Server4 -DestinationRGName rg04 -DestinationVolumeName f: -DestinationLogVolumeName g:
