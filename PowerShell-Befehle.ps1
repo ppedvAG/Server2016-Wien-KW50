@@ -15,3 +15,6 @@ Add-Computer -DomainName ppedv.test -NewName Server2 -Restart -Credential ppedv\
 
 #Installieren von der DateiServer Rolle auf Server3
 Install-WindowsFeature -Name FS-FileServer -ComputerName Server3 -IncludeManagementTools
+
+#Verbinden einer PowerShell Remote Session zu Server 2
+Enter-PSSession -ComputerName Server2
