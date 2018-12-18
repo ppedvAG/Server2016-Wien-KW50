@@ -18,3 +18,8 @@ Install-WindowsFeature -Name FS-FileServer -ComputerName Server3 -IncludeManagem
 
 #Verbinden einer PowerShell Remote Session zu Server 2
 Enter-PSSession -ComputerName Server2
+
+#manuelles Starten des Dedupjobs 
+Start-DedupJob -Type Optimization -Volume E:
+#prüfen des Fortschrit wenn keine Antwort kommt ist sie fertig
+Get-DedupJob 
