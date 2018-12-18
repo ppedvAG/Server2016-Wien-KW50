@@ -12,3 +12,6 @@ Clear-DnsServerCache
 
 #domain join und rename
 Add-Computer -DomainName ppedv.test -NewName Server2 -Restart -Credential ppedv\Administrator
+
+#Installieren von der DateiServer Rolle auf Server3
+Install-WindowsFeature -Name FS-FileServer -ComputerName Server3 -IncludeManagementTools
