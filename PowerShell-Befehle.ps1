@@ -34,3 +34,5 @@ Enable-ClusterStorageSpacesDirect -cimSession s2dcluster
 
 #Nano1 ohne Domain Join
 New-NanoServerImage -DeploymentType Guest -Edition Datacenter -MediaPath D: -BasePath .\Base -TargetPath .\Nano1.vhdx -ComputerName Nano1 -Package Microsoft-NanoServer-Guest-Package
+#Nano2 mit Domain Join
+New-NanoServerImage -DeploymentType Guest -Edition Datacenter -MediaPath D: -BasePath .\Base -TargetPath .\Nano2.vhdx -ComputerName Nano2 -Package Microsoft-NanoServer-Guest-Package -DomainName ppedv.test
